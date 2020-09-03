@@ -51,8 +51,8 @@ namespace BipolarityX {
             }
             {
                 listBox1.Items.Clear();
-                PopulateListBox(listBox1, "./Scripts", "*.txt");
-                PopulateListBox(listBox1, "./Scripts", "*.lua");
+                Utils.PopulateListBox(listBox1, "./Scripts", "*.txt");
+                Utils.PopulateListBox(listBox1, "./Scripts", "*.lua");
             }
             {
                 TopMost = true;
@@ -235,6 +235,8 @@ namespace BipolarityX {
         }
 
         private void button_scriptHub(object sender, EventArgs e) {
+            var scriptHub = new ScriptHub();
+            scriptHub.Show();
         }
 
         private void executeScriptToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -252,8 +254,8 @@ namespace BipolarityX {
 
         private void refreshScriptListToolStripMenuItem_Click(object sender, EventArgs e) {
             listBox1.Items.Clear();
-            PopulateListBox(listBox1, "./Scripts", "*.txt");
-            PopulateListBox(listBox1, "./Scripts", "*.lua");
+            Utils.PopulateListBox(listBox1, "./Scripts", "*.txt");
+            Utils.PopulateListBox(listBox1, "./Scripts", "*.lua");
         }
 
         private void CheckAttached() {
@@ -270,12 +272,6 @@ namespace BipolarityX {
             CheckAttached();
         }
 
-        private static void PopulateListBox(ListBox lsb, string folder, string fileType) {
-            var dinfo = new DirectoryInfo(folder);
-            var files = dinfo.GetFiles(fileType);
-            foreach (var file in files) {
-                lsb.Items.Add(file.Name);
-            }
-        }
+
     }
 }

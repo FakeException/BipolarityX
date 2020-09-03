@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace BipolarityX {
     public static class Utils {
@@ -39,6 +40,14 @@ namespace BipolarityX {
             }
 
             return result;
+        }
+        
+        public static void PopulateListBox(ListBox lsb, string folder, string fileType) {
+            var dinfo = new DirectoryInfo(folder);
+            var files = dinfo.GetFiles(fileType);
+            foreach (var file in files) {
+                lsb.Items.Add(file.Name);
+            }
         }
     }
 }
