@@ -126,6 +126,9 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=3.0.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.3.0.2\lib\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="EasyExploits, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Downloads\EasyExploits.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -145,7 +148,7 @@
     <Compile Include="BipolarityGui.Designer.cs">
       <DependentUpon>BipolarityGui.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

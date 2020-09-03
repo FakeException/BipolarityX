@@ -32,7 +32,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.attach = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -47,7 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,19 +148,19 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button_clear);
             // 
-            // button6
+            // attach
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (30)))), ((int) (((byte) (30)))), ((int) (((byte) (30)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Aqua;
-            this.button6.Location = new System.Drawing.Point(519, 325);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 30);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Options";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button_options);
+            this.attach.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (30)))), ((int) (((byte) (30)))), ((int) (((byte) (30)))));
+            this.attach.FlatAppearance.BorderSize = 0;
+            this.attach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attach.ForeColor = System.Drawing.Color.Aqua;
+            this.attach.Location = new System.Drawing.Point(519, 325);
+            this.attach.Name = "attach";
+            this.attach.Size = new System.Drawing.Size(103, 30);
+            this.attach.TabIndex = 7;
+            this.attach.Text = "Inject";
+            this.attach.UseVisualStyleBackColor = false;
+            this.attach.Click += new System.EventHandler(this.button_launchExploit);
             // 
             // button7
             // 
@@ -245,7 +244,6 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.label1);
@@ -285,7 +283,6 @@
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 27;
             this.label4.Text = "Bipolarity";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -305,20 +302,6 @@
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Not Attached";
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (40)))), ((int) (((byte) (40)))), ((int) (((byte) (40)))));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(649, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(25, 25);
-            this.button10.TabIndex = 10;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button_launchExploit);
             // 
             // button9
             // 
@@ -404,7 +387,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.attach);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -425,12 +408,11 @@
 
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button attach;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
