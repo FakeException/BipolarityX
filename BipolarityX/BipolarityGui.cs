@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace BipolarityX {
     public partial class BipolarityGui : Form {
@@ -14,14 +15,22 @@ namespace BipolarityX {
 
         private async void Main_Load(object sender, EventArgs e) {
             
+            try {
+                var registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_BROWSER_EMULATION", true);
+                var friendlyName = AppDomain.CurrentDomain.FriendlyName;
+                var flag2 = registryKey != null && registryKey.GetValue(friendlyName) == null;
+                if (flag2) {
+                    registryKey.SetValue(friendlyName, 11001, RegistryValueKind.DWord);
+                }
+            } catch (Exception) {
+                // ignored
+            }
+
             webBrowser1.Url = new Uri($"file:///{Directory.GetCurrentDirectory()}/Monaco/Monaco.html");
             await Task.Delay(500);
             if (!(webBrowser1.Document is null)) {
                 webBrowser1.Document.InvokeScript("SetTheme", new object[] {
                     "Dark"
-                    /*
-                 There are 2 Themes Dark and Light
-                */
                 });
                 AddBase();
                 AddMath();
