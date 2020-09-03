@@ -19,3 +19,5 @@ namespace BipolarityX.Properties {
         public static Settings Default {
             get { return defaultInstance; }
         }
+    }
+}
