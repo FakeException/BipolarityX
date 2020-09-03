@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace BipolarityX {
     public partial class BipolarityGui : Form {
@@ -14,7 +14,7 @@ namespace BipolarityX {
         private readonly string _defPath = Application.StartupPath + "//Monaco//";
 
         private async void Main_Load(object sender, EventArgs e) {
-            
+
             try {
                 var registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_BROWSER_EMULATION", true);
                 var friendlyName = AppDomain.CurrentDomain.FriendlyName;
@@ -172,6 +172,16 @@ namespace BipolarityX {
             foreach (var file in files) {
                 lsb.Items.Add(file.Name);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
